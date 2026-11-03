@@ -1,0 +1,10 @@
+require('dotenv').config();
+const express=require('express');const cors=require('cors');const session=require('express-session');
+const authRoutes=require('./src/routes/auth.routes');const gmailRoutes=require('./src/routes/gmail.routes');const {startScheduler}=require('./src/services/scheduler');
+const app=express();
+app.set('trust proxy',1);
+app.use(cors({origin:process.env.FRONTEND_URL||'http://localhost:5173',credentials:true}));
+app.use(express.json());
+app.use(session({name:'sgm.sid',secret:process.env.SESSION_SECRET||'change-this-session-secret',resave:false,saveUninitialized:false,cookie:{httpOnly:true,sameSite:'lax',secure:process.env.NODE_ENV==='production',maxAge:7*24*60*60*1000}}));
+app.use('/auth',authRoutes);app.use('/api',gmailRoutes);app.get('/health',(req,res)=>res.json({ok:true}));
+const PORT=process.env.PORT||5000;app.listen(PORT,()=>{console.log(`Smart Gmail Manager backend running on http://localhost:${PORT}`);startScheduler();});
