@@ -136,3 +136,33 @@ Register the callback URL in your Google Cloud OAuth configuration.
 - AI-based email classification.
 - Advanced spam detection.
 - Smart email prioritization.
+
+---
+
+# 📸 Project Screenshots
+
+Here is a visual overview of our Smart Gmail Manager application.
+
+### 1. Project Interface
+![Project Image 1](images/project_image_01.png)
+
+### 2. Application Screen
+![Project Image 2](images/project_image_02.png)
+
+### 3. Dashboard
+![Project Image 3](images/project_image_03.png)
+
+### 4. Smart Email Filters
+![Project Image 4](images/project_image_04.png)
+
+### 5. Filter Conditions
+![Project Image 5](images/project_image_05.png)
+
+### 6. Email Actions
+![Project Image 6](images/project_image_06.png)
+
+### 7. Protected Senders
+![Project Image 7](images/project_image_07.png)
+
+### 8. Activity History
+![Project Image 8](images/project_image_08.png)
